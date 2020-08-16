@@ -1,0 +1,37 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: 100% 100%;
+  background-image: url(../../resource/assets/game/game_bg.png);
+}
+
+/** 上部分*/
+.top {
+  width: 100vw;
+  height: 60px;
+}
+
+/** 问题容器*/
+.problem_container {
+  width: 25.875rem;
+  height: 25.875rem;
+  background-color: teal;
+  border-radius: 10px;
+  /* margin: -10px auto 0 auto; */
+  position: absolute;
+  top: 60px;
+  left: 0px;
+}
+
+/** 工具栏*/
+.tool_container {
+  width: 100vw;
+}
+
+/** 答案容器*/
+.answer_container {
+  width: 100vw;
+}
