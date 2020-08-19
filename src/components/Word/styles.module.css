@@ -1,22 +1,19 @@
 .container {
-  width: 40px;
-  height: 40px;
+  width: 10.9vw;
+  height: 10.9vw;
   position: absolute;
 }
 
 .item_bg {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 10.9vw;
+  height: 10.9vw;
 }
 
 .container span {
-  font-size: 29px;
+  font-size: 8vw;
   text-align: center;
-  width: 40px;
-  height: 40px;
+  width: 10.9vw;
+  height: 10.9vw;
   position: absolute;
   top: 0;
   left: 0;

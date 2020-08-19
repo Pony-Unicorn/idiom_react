@@ -2,7 +2,7 @@ import { IUserUpdatePayload, USER_UPDATE } from '../actions/index';
 import { IUserState } from './types';
 
 const initial: IUserState = {
-    uid: "",
+    uid: "pony",
     /* 体力*/
     strength: 0,
     /* 用户最大体力*/

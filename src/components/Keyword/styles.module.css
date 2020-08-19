@@ -1,0 +1,57 @@
+.container {
+  width: 10.9vw;
+  height: 10.9vw;
+  margin: 3px;
+}
+
+.indoor {
+  width: 10.9vw;
+  height: 10.9vw;
+  position: absolute;
+  transform-origin: 50% 50%;
+  animation: indoorShowAnimation 0.8s alternate;
+}
+
+.indoor_hide {
+  width: 10.9vw;
+  height: 10.9vw;
+  visibility: hidden;
+  position: absolute;
+  transform-origin: 50% 50%;
+  animation: indoorHideAnimation 1s alternate;
+}
+
+@keyframes indoorShowAnimation {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes indoorHideAnimation {
+  0% {
+      visibility: visible;
+      transform: scale(1);
+  }
+
+  100% {
+      transform: scale(0);
+  }
+}
+
+.item_bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.container span {
+  width: 10.9vw;
+  font-size: 8vw;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}

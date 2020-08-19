@@ -1,8 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { IStateAll } from '../../store/types';
+import { userUpdate } from '../../actions';
+import { pointPass } from '../../api';
+
+import { IStateAll, IUserState } from '../../store/types';
 
 import styles from './styles.module.css';
 
@@ -14,8 +17,14 @@ import btn_start from '../../resource/assets/home/btn_start.png';
 export default function HomePage() {
 
   const userState = useSelector((state: IStateAll) => state.user);
-
+  const dispatch = useDispatch();
   const history = useHistory();
+
+  const startPlay = async () => {
+    const res = await pointPass({ uid: userState.uid, type: '0' }) as IUserState;
+    dispatch(userUpdate(res));
+    history.replace("/answer");
+  }
 
   return (
     <div className={styles.container}>
@@ -29,11 +38,7 @@ export default function HomePage() {
       <img className={styles.build_img} src={build001} alt="" />
       <img className={styles.character_img} src={character} alt="" />
       <div className={styles.foot}>
-        <button className={styles.btn_play} onClick={
-          () => {
-            history.replace("/answer");
-          }
-        }>
+        <button className={styles.btn_play} onClick={startPlay}>
           <img className={styles.btn_play_img} src={btn_start} alt="" />
         </button>
       </div>

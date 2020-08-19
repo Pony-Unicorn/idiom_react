@@ -4,34 +4,99 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-size: 100% 100%;
+  background-size: 100vw 100vh;
   background-image: url(../../resource/assets/game/game_bg.png);
+  display: flex;
+  flex-direction: column;
 }
 
 /** 上部分*/
 .top {
   width: 100vw;
-  height: 60px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.btn_home {
+  width: 10vw;
+  height: 10vw;
+  margin: 5px 20px 5px 5px;
+}
+
+.level_text {
+  font-size: 6vw;
 }
 
 /** 问题容器*/
 .problem_container {
-  width: 25.875rem;
-  height: 25.875rem;
-  background-color: teal;
+  width: 100vw;
+  height: 100vw;
   border-radius: 10px;
-  /* margin: -10px auto 0 auto; */
+  background-color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 成语填空 */
+.idiom {
+  width: 99vw;
+  height: 99vw;
   position: absolute;
-  top: 60px;
-  left: 0px;
 }
 
 /** 工具栏*/
 .tool_container {
   width: 100vw;
+  height: 20px;
 }
 
 /** 答案容器*/
 .answer_container {
   width: 100vw;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/** 完成容器*/
+.show_end {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../../resource/assets/game/home-bj2.png);
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.txt_gongxi {
+  margin-top: 200px;
+  font-weight: bolder;
+  color: transparent;
+  background-color : black;
+  text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+  -webkit-background-clip : text;
+  font-size: 10vw;
+}
+
+.txt_complete{
+  margin-top: 40px;
+  margin-bottom: 200px;
+  font-weight: bolder;
+  color: transparent;
+  background-color : rgb(11, 26, 236);
+  text-shadow : rgba(192, 22, 150, 0.61) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+  -webkit-background-clip : text;
+  font-size: 8vw;
+}
+
+.hide_end {
+  display: none;
 }

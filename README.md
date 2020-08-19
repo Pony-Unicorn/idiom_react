@@ -16,3 +16,6 @@
  * 数据管理：redux
  * 异步中间件：redux-thunk，这么小的数据量完全没有必要使用 saga 增加复杂度
  * UI 框架目前还真没找到一款适合游戏开发的 ui 框架，做游戏还是自己封装吧
+
+### 思考：
+ * https://www.jianshu.com/p/01d9b3022e5d
