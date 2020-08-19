@@ -176,8 +176,8 @@ export default function AnswerPage() {
   async function _allComplete() {
     getBox_mp3.play();
     setAllComplete(true);
-    const res = await pointPass({ uid: userState.uid, type: '1' }) as IUserState;
-    dispatch(userUpdate(res));
+    const res = await pointPass({ uid: userState.uid, type: '1' }) as { data: IUserState };
+    dispatch(userUpdate(res.data));
   }
 
   function _gridToPoint(gx: number, gy: number): number[] {

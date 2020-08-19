@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -21,8 +21,14 @@ export default function HomePage() {
   const history = useHistory();
 
   const startPlay = async () => {
-    const res = await pointPass({ uid: userState.uid, type: '0' }) as IUserState;
-    dispatch(userUpdate(res));
+
+    if (userState.strength <= 0) {
+      alert('体力不够了啊，请歇息再来哦');
+      return;
+    }
+    
+    const res = await pointPass({ uid: userState.uid, type: '0' }) as { data: IUserState };
+    dispatch(userUpdate(res.data));
     history.replace("/answer");
   }
 

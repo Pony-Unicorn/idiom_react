@@ -19,21 +19,22 @@ export const gameInit_ac = (params: { js_code?: string | undefined; uid?: string
   (dispatch: any) => {
     gameInit(params)
       .then((res: any) => {
-        localStorage.setItem('uid', res['uid']);
-        dispatch(userUpdate(res));
+        const data = res.data;
+        localStorage.setItem('uid', data['uid']);
+        dispatch(userUpdate(data));
       }).catch(() => {
-        // alert('网络出错，请刷新重试');
+        alert('网络出错，请刷新重试');
       })
   }
 
 export const pointPass_ac = (params: string) =>
   (dispatch: any, getState: any) => {
-    console.log('中间输出');
     pointPass({ uid: getState()['user']['uid'], type: params })
       .then((res: any) => {
-        dispatch(userUpdate(res));
+        const data = res.data;
+        dispatch(userUpdate(data));
+        console.log(data);
       }).catch(() => {
-        // alert('网络出错，请刷新重试');
-        console.log('错误输出');
+        alert('网络出错，请刷新重试');
       });
   }

@@ -14,7 +14,7 @@ function App() {
   useEffect(
     () => {
       const uid = localStorage.getItem('uid');
-      if (uid) {
+      if (uid && typeof uid != 'undefined') {
         dispatch(gameInit_ac({ uid }));
       } else {
         const js_code = Date.now().toString();
